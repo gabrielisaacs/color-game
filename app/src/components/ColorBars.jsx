@@ -43,11 +43,11 @@ const ColorBars = ({ onScore, onFail, gameState, setGameState }) => {
             hover:scale-105 active:scale-95 relative group
             ${!gameState.isPlaying ? 'opacity-50 cursor-not-allowed' : ''}`}
           >
-            <span className="absolute inset-0 flex items-center justify-center 
+            {/* <span className="absolute inset-0 flex items-center justify-center 
             text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200 
             text-sm sm:text-base">
               {getColorName(color)}
-            </span>
+            </span> */}
           </button>
         ))}
       </div>

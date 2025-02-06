@@ -12,6 +12,7 @@ const StatusBar = ({ score, timeLeft, onNewGame, isPlaying }) => {
     <div className='w-full px-4 sm:px-8 flex flex-col sm:flex-row gap-4 sm:gap-0 
     mt-[6rem] sm:mt-[5.2rem]'>
       <button
+        data-testid="newGameButton"
         onClick={onNewGame}
         disabled={isPlaying}
         className={`h-[3rem] font-bold text-base sm:text-lg w-full sm:w-auto
@@ -29,7 +30,7 @@ const StatusBar = ({ score, timeLeft, onNewGame, isPlaying }) => {
       text-black items-center py-2 px-4 gap-2 w-full sm:w-auto'>
         <div className="flex items-center gap-2 min-w-[4.5rem]">
           <FaFlagCheckered className='text-red-700' />
-          <span className={`${score < 0 ? 'text-red-600' : ''}`}>
+          <span data-testid="score" className={`${score < 0 ? 'text-red-600' : ''}`}>
             {score}
           </span>
         </div>

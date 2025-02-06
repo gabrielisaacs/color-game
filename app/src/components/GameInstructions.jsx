@@ -17,7 +17,7 @@ const GameInstructions = ({ lastResult, isPlaying }) => {
             </div>
             <div className="text-sm sm:text-base text-gray-700 max-w-[90vw] sm:max-w-2xl 
             text-center space-y-2 px-4">
-              <p className="font-medium">Match the color shown in the top button with the correct option below.</p>
+              <p data-testid="gameInstructions" className="font-medium">Match the color shown in the top button with the correct option below.</p>
               <ul className="space-y-1">
                 <li>• Correct match: <span className="text-green-600">+10 points</span></li>
                 <li>• Wrong match: <span className="text-red-600">-5 points</span></li>
@@ -29,11 +29,11 @@ const GameInstructions = ({ lastResult, isPlaying }) => {
             </div>
           </div>
         ) : lastResult === 'correct' ? (
-          <div className="flex items-center gap-2">
+          <div data-testid="gameStatus" className="flex items-center gap-2">
             Correct! <FaCheck />
           </div>
         ) : lastResult === 'wrong' ? (
-          <div className="flex items-center gap-2">
+          <div data-testid="gameStatus" className="flex items-center gap-2">
             Wrong! Try Again <FaXmark />
           </div>
         ) : (
