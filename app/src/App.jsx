@@ -72,24 +72,26 @@ function App() {
   };
 
   return (
-    <div className='w-screen min-h-screen flex flex-col'>
+    <div className='w-screen min-h-screen flex flex-col overflow-x-hidden'>
       <NavBar />
-      <StatusBar
-        score={gameState.score}
-        timeLeft={gameState.timeLeft}
-        onNewGame={handleNewGame}
-        isPlaying={gameState.isPlaying}
-      />
-      <GameInstructions
-        lastResult={gameState.lastResult}
-        isPlaying={gameState.isPlaying}
-      />
-      <ColorBars
-        onScore={handleScore}
-        onFail={handleFail}
-        gameState={gameState}
-        setGameState={setGameState}
-      />
+      <main className="flex-1 flex flex-col">
+        <StatusBar
+          score={gameState.score}
+          timeLeft={gameState.timeLeft}
+          onNewGame={handleNewGame}
+          isPlaying={gameState.isPlaying}
+        />
+        <GameInstructions
+          lastResult={gameState.lastResult}
+          isPlaying={gameState.isPlaying}
+        />
+        <ColorBars
+          onScore={handleScore}
+          onFail={handleFail}
+          gameState={gameState}
+          setGameState={setGameState}
+        />
+      </main>
       <Footer />
       {!gameState.isPlaying && gameState.timeLeft === 0 && (
         <GameOverModal
